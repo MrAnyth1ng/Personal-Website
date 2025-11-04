@@ -231,11 +231,11 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; 
+    flex-grow: 1; /* Key for uniform card height */
 }
 
 .tech-tag-container {
-    margin-top: auto; 
+    margin-top: auto; /* Key: Pushes tags to the bottom */
     padding-top: 10px;
     border-top: 1px solid #eee;
 }
@@ -248,10 +248,12 @@ body {
     border-radius: 4px;
     font-size: 0.8em;
     margin-right: 5px;
+    margin-top: 5px; /* Added for better vertical spacing of tags */
 }
 
-
-/* ############################## */
+/* =================================
+   4. Footer Styles
+   ================================= */
 .site-footer {
     background-color: #1a3c5a;
     color: #ffffff;
@@ -302,10 +304,6 @@ body {
     margin: 0;
 }
 
-.footer-column ul li {
-    margin-bottom: 8px;
-}
-
 .footer-column a {
     color: #ffffff;
     text-decoration: none;
@@ -345,8 +343,32 @@ body {
     color: #c0d9ed;
 }
 
-
+/* =================================
+   5. Media Queries (Responsiveness)
+   ================================= */
 @media (max-width: 768px) {
+    /* Header */
+    .header-content {
+        flex-direction: column;
+        padding: 10px 20px;
+    }
+
+    .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 10px 0;
+    }
+
+    .main-nav a {
+        margin: 5px 10px;
+    }
+
+    .site-logo, .header-utility {
+        margin-bottom: 10px;
+    }
+
+    /* Footer */
     .footer-container {
         flex-direction: column;
     }
@@ -358,7 +380,13 @@ body {
     .footer-column:last-child {
         margin-bottom: 0;
     }
+    
+    /* Skills */
+    .skills-carousel-section {
+        padding: 0 10px;
+    }
+    
+    .carousel-window {
+        max-width: 100%;
+    }
 }
-
-
-
