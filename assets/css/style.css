@@ -1,7 +1,21 @@
+body {
+    font-family: sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+/* =================================
+   1. Header and Navigation Styles
+   ================================= */
 .site-header {
     background-color: #ffffff;
     border-bottom: 2px solid #eee;
     padding: 10px 0;
+    position: sticky; /* Keep header visible when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensure header is on top */
 }
 
 .header-content {
@@ -13,7 +27,6 @@
     padding: 0 20px;
 }
 
-
 .site-logo h2 {
     font-size: 1.8em;
     font-weight: 800;
@@ -23,7 +36,6 @@
 .site-logo a {
     text-decoration: none;
 }
-
 
 .main-nav a {
     color: #1a3c5a;
@@ -42,7 +54,6 @@
     border-bottom: 3px solid #1da192;
 }
 
-
 .header-utility {
     min-width: 80px; 
     text-align: right;
@@ -55,41 +66,11 @@
     font-weight: 600;
 }
 
-
-@media (max-width: 768px) {
-    .header-content {
-        flex-direction: column;
-        padding: 10px 20px;
-    }
-
-    .main-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin: 10px 0;
-    }
-
-    .main-nav a {
-        margin: 5px 10px;
-    }
-
-    .site-logo, .header-utility {
-        margin-bottom: 10px;
-    }
-}
-
-/* ############################## */
-@keyframes carousel-move {
-    0% {
-        transform: translateX(0);
-    }
-    100% {
-        transform: translateX(-50%); 
-    }
-}
-
-
+/* =================================
+   2. Skills Section (Mouse-Driven)
+   ================================= */
 .skills-carousel-section {
+    max-width: 1200px;
     margin: 60px auto 40px; 
     padding: 0 20px;
     text-align: center;
@@ -101,29 +82,30 @@
     margin-bottom: 25px;
 }
 
+.carousel-window {
+    max-width: 1150px;
+    margin: 0 auto;
+    overflow: hidden; /* Key: Hides the items outside the central area */
+    padding: 10px 0;
+    cursor: grab; /* Indicates content is draggable/interactive */
+}
+
 .skills-carousel {
     display: flex;
     white-space: nowrap; 
     padding: 10px 0;
     gap: 30px; 
     width: fit-content; 
-
-    animation: carousel-move 40s linear infinite; 
+    
+    /* Key: Transition property to allow JS movement to be smooth */
+    transition: transform 0.1s linear; 
+    
+    /* Remove scrollbars, as the mouse handles movement */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }
-
-.carousel-window {
-    max-width: 1150px;
-    margin: 0 auto;
-    overflow: hidden; 
-    padding: 10px 0;
-}
-
 .skills-carousel::-webkit-scrollbar {
     display: none;
-}
-
-.skills-carousel:hover {
-    animation-play-state: paused;
 }
 
 .skill-item {
@@ -143,8 +125,9 @@
 }
 
 .skill-item img {
-    width: 100px;
-    height: 100px;
+    width: 75px;
+    height: 75px;
+    object-fit: contain; /* Ensures icons aren't stretched */
     margin-bottom: 5px;
     filter: grayscale(80%);
     transition: filter 0.3s;
@@ -162,6 +145,9 @@
 }
 
 
+/* =================================
+   3. Project Grid Styles
+   ================================= */
 .highlight-projects-section {
     max-width: 1200px;
     margin: 0 auto;
@@ -176,23 +162,13 @@
     font-weight: 700;
 }
 
-
-/* ############################## */
-body {
-    font-family: sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-    background-color: #f8f8f8;
-}
-
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0 0; /* Adjusted padding as section handles outer padding */
 }
 
 .project-card {
@@ -221,10 +197,6 @@ body {
     height: 200px;
     object-fit: cover;
     border-bottom: 1px solid #eee;
-}
-
-.card-content {
-    padding: 20px;
 }
 
 .card-content {
