@@ -13,9 +13,9 @@ body {
     background-color: #ffffff;
     border-bottom: 2px solid #eee;
     padding: 10px 0;
-    position: sticky; /* Keep header visible when scrolling */
+    position: sticky;
     top: 0;
-    z-index: 1000; /* Ensure header is on top */
+    z-index: 1000;
 }
 
 .header-content {
@@ -85,9 +85,9 @@ body {
 .carousel-window {
     max-width: 1150px;
     margin: 0 auto;
-    overflow: hidden; /* Key: Hides the items outside the central area */
+    overflow: hidden;
     padding: 10px 0;
-    cursor: grab; /* Indicates content is draggable/interactive */
+    cursor: grab;
 }
 
 .skills-carousel {
@@ -168,7 +168,7 @@ body {
     gap: 30px;
     max-width: 1200px;
     margin: 40px auto;
-    padding: 0 0; /* Adjusted padding as section handles outer padding */
+    padding: 0 0;
 }
 
 .project-card {
