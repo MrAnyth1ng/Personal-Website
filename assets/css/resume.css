@@ -1,3 +1,8 @@
+/*
+ * Resume-specific styling for resume.html
+ * Note: This file complements assets/css/style.css, which handles the header and footer.
+ */
+
 .resume-container {
     max-width: 900px;
     margin: 60px auto;
@@ -7,9 +12,9 @@
     border-radius: 8px;
 }
 
-
+/* --- Section Headings --- */
 .resume-header {
-    border-bottom: 2px solid #1da192;
+    border-bottom: 2px solid #1da192; /* The primary teal color */
     padding-bottom: 20px;
     margin-bottom: 30px;
     text-align: center;
@@ -17,7 +22,7 @@
 
 .resume-header h1 {
     font-size: 2.5em;
-    color: #1a3c5a;
+    color: #1a3c5a; /* The primary dark blue color */
     margin-bottom: 5px;
 }
 
@@ -40,11 +45,11 @@
     font-weight: 700;
 }
 
-
+/* --- Job Entries (Timeline Look) --- */
 .job-entry {
     margin-bottom: 25px;
     padding-left: 15px;
-    border-left: 3px solid #e0f7fa;
+    border-left: 3px solid #e0f7fa; /* Light blue line to indicate history */
 }
 
 .job-entry h3 {
@@ -69,7 +74,7 @@
     color: #444;
 }
 
-
+/* --- Skills List (Tags) --- */
 .skill-list {
     list-style: none;
     padding: 0;
@@ -87,7 +92,7 @@
     font-weight: 500;
 }
 
-
+/* --- Download Button --- */
 .download-btn-wrapper {
     text-align: right;
     margin-bottom: 30px;

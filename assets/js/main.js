@@ -1,5 +1,5 @@
 // ===================================
-// 1. Mouse Scroll Functionality
+// 1. Mouse Scroll Functionality (Fixed Boundary Check)
 // ===================================
 
 function setupMouseScroll(windowSelector, movingElementSelector) {

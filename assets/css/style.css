@@ -1,5 +1,5 @@
 body {
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     color: #333;
     margin: 0;
     padding: 0;
@@ -54,99 +54,114 @@ body {
     border-bottom: 3px solid #1da192;
 }
 
-.header-utility {
-    min-width: 80px; 
-    text-align: right;
+
+.main-nav .nav-dropdown {
+    position: relative;
+    display: inline-block;
 }
 
-.resume-link {
-    color: #1a3c5a; 
-    text-decoration: none;
-    font-size: 0.95em;
-    font-weight: 600;
+
+.main-nav .dropbtn {
+    color: #1da192;
+    border-bottom: 3px solid #1da192;
+    display: block;
 }
 
-/* =================================
-   2. Skills Section (Mouse-Driven)
-   ================================= */
-.skills-carousel-section {
-    max-width: 1200px;
-    margin: 60px auto 40px; 
-    padding: 0 20px;
-    text-align: center;
-}
 
-.skills-carousel-section h2 {
-    font-size: 1.8em;
-    color: #1a3c5a;
-    margin-bottom: 25px;
-}
-
-.carousel-window {
-    max-width: 1150px;
-    margin: 0 auto;
-    overflow: hidden;
-    padding: 10px 0;
-    cursor: grab;
-}
-
-.skills-carousel {
-    display: flex;
-    white-space: nowrap; 
-    padding: 10px 0;
-    gap: 30px; 
-    width: fit-content; 
-    
-    /* Key: Transition property to allow JS movement to be smooth */
-    transition: transform 0.1s linear; 
-    
-    /* Remove scrollbars, as the mouse handles movement */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.skills-carousel::-webkit-scrollbar {
+.dropdown-content {
     display: none;
-}
-
-.skill-item {
-    flex-shrink: 0; 
-    text-align: center;
-    padding: 10px 15px;
-    border-radius: 8px;
+    position: absolute;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
     background-color: #ffffff;
     border: 1px solid #eee;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: transform 0.2s;
+    border-radius: 5px;
+    padding: 5px 0;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transform: translateY(10px);
 }
 
-.skill-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+.dropdown-content a {
+    color: #1a3c5a;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: 500;
+    border-radius: 0;
 }
 
-.skill-item img {
-    width: 75px;
-    height: 75px;
-    object-fit: contain;
-    margin-bottom: 5px;
-    filter: grayscale(85%);
-    transition: filter 0.3s;
+
+.dropdown-content a:hover {
+    background-color: #e6f0ff;
+    color: #3f87f5;
 }
 
-.skill-item:hover img {
-    filter: grayscale(0%);
+.main-nav .nav-dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
 
-.skill-item p {
-    margin: 0;
+
+.header-utility {
+    margin-left: 20px;
+}
+.resume-link {
+    background-color: #3f87f5;
+    color: #ffffff !important;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
     font-size: 0.9em;
-    font-weight: 600;
-    color: #333;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
 }
 
+.resume-link:hover {
+    background-color: #2e6bd6;
+}
 
 /* =================================
-   3. Project Grid Styles
+   2. General Content Styles
+   ================================= */
+main {
+    padding-bottom: 50px;
+}
+
+.max-width-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-title {
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #1a3c5a;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    color: #555;
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* =================================
+   3. Highlight Projects / Project Grid Styles
    ================================= */
 .highlight-projects-section {
     max-width: 1200px;
@@ -228,67 +243,263 @@ body {
 }
 
 /* =================================
-   4. Footer Styles
+   4. Skills Carousel Section
+   ================================= */
+.skills-carousel-section {
+    max-width: 1200px;
+    margin: 60px auto 40px; 
+    padding: 0 20px;
+    text-align: center;
+}
+
+.skills-carousel-section h2 {
+    font-size: 1.8em;
+    color: #1a3c5a;
+    margin-bottom: 25px;
+}
+
+.carousel-window {
+    max-width: 1150px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 10px 0;
+    cursor: grab;
+}
+
+.skills-carousel {
+    display: flex;
+    white-space: nowrap; 
+    padding: 10px 0;
+    gap: 30px; 
+    width: fit-content; 
+    
+    /* Key: Transition property to allow JS movement to be smooth */
+    transition: transform 0.1s linear; 
+    
+    /* Remove scrollbars, as the mouse handles movement */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.skills-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.skill-item {
+    flex-shrink: 0; 
+    text-align: center;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+.skill-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item img {
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
+    margin-bottom: 5px;
+    filter: grayscale(85%);
+    transition: filter 0.3s;
+}
+
+.skill-item:hover img {
+    filter: grayscale(0%);
+}
+
+.skill-item p {
+    margin: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #333;
+}
+
+/* =================================
+   5. Learning Modules (New Styles for learning.html)
+   ================================= */
+.learning-hub-section {
+    padding: 40px 0;
+}
+
+.learning-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.learning-card {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 25px;
+    border-left: 5px solid #1da192;
+    position: relative;
+}
+
+.learning-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-left-color: #1a3c5a;
+}
+
+.card-icon-container {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.card-icon-container img {
+    width: 45px;
+    height: 45px;
+    object-fit: contain;
+}
+
+.learning-card h3 {
+    font-size: 1.4em;
+    color: #1a3c5a;
+    margin: 0 0 10px 0;
+}
+
+.learning-card p {
+    font-size: 0.95em;
+    color: #666;
+    flex-grow: 1;
+    margin-bottom: 20px;
+}
+
+.tech-category {
+    display: inline-block;
+    background-color: #1a3c5a;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: 700;
+    align-self: flex-start;
+}
+
+/* =================================
+   6. Lightbox Modal
+   ================================= */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 800px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#lightbox-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.lightbox-close:hover,
+.lightbox-close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* =================================
+   7. Footer Styles
    ================================= */
 .site-footer {
     background-color: #1a3c5a;
     color: #ffffff;
-    padding: 40px 20px 20px;
-    font-size: 0.9em;
+    padding: 40px 0 20px 0;
 }
 
 .footer-container {
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
-    padding-bottom: 30px; 
+    padding: 0 20px;
 }
 
-.footer-column {
-    flex: 1;
-    min-width: 200px;
-    margin: 0 15px 30px 15px;
-}
-
-.footer-column h3,
-.footer-column h4 {
-    color: #ffffff;
-    font-size: 1.1em;
+.footer-column h3, .footer-column h4 {
+    color: #1da192; /* Teal color */
     margin-bottom: 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 10px;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-.footer-info h3 {
-    font-size: 1.5em;
-    margin-bottom: 5px;
-    border-bottom: none; 
-}
-
-.footer-column p {
-    margin-bottom: 8px;
-    line-height: 1.6;
+.footer-info p {
+    font-size: 0.9em;
+    line-height: 1.5;
     color: #c0d9ed;
+}
+
+.footer-info a {
+    color: #c0d9ed;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.footer-info a:hover {
+    color: #ffffff;
 }
 
 .footer-column ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
-.footer-column a {
-    color: #ffffff;
+.footer-column ul li a {
+    color: #c0d9ed;
     text-decoration: none;
-    transition: color 0.3s ease;
+    font-size: 0.9em;
+    line-height: 2;
+    transition: color 0.3s;
 }
 
-.footer-column a:hover {
-    color: #a0d0ef;
-    text-decoration: underline;
+.footer-column ul li a:hover {
+    color: #ffffff;
 }
 
 .social-links {
@@ -315,65 +526,13 @@ body {
 .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-top: 20px;
+    font-size: 0.9em;
     text-align: center;
     color: #c0d9ed;
 }
 
 /* =================================
-   6. Lightbox/Modal Styles (NEW)
-   ================================= */
-.lightbox-modal {
-    display: none; /* Hidden by default */
-    position: fixed; 
-    z-index: 2000; 
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%; 
-    overflow: auto; 
-    background-color: rgba(0,0,0,0.9); 
-}
-
-.lightbox-content {
-    margin: 10% auto; 
-    padding: 20px;
-    width: 90%; 
-    max-width: 900px;
-    position: relative;
-    text-align: center;
-}
-
-.lightbox-content img {
-    display: block;
-    width: auto; 
-    max-width: 100%; 
-    max-height: 80vh; 
-    margin: 0 auto;
-    border-radius: 5px;
-}
-
-.lightbox-close {
-    color: #f1f1f1;
-    font-size: 40px;
-    font-weight: bold;
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    transition: 0.3s;
-    cursor: pointer;
-    z-index: 2001;
-}
-
-.lightbox-close:hover,
-.lightbox-close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/* =================================
-   5. Media Queries (Responsiveness)
+   8. Media Queries (Responsiveness)
    ================================= */
 @media (max-width: 768px) {
     /* Header */
@@ -386,36 +545,46 @@ body {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        margin: 10px 0;
+        margin-top: 10px;
+        order: 2;
     }
 
     .main-nav a {
         margin: 5px 10px;
     }
-
-    .site-logo, .header-utility {
-        margin-bottom: 10px;
+    
+    .header-utility {
+        order: 3;
+        margin-top: 10px;
     }
 
+    /* Content */
+    .section-title {
+        font-size: 2em;
+        margin-top: 30px;
+    }
+    
+    .project-grid, .learning-grid {
+        gap: 20px;
+    }
+    
     /* Footer */
     .footer-container {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        text-align: center;
     }
+    
     .footer-column {
-        min-width: unset; 
-        margin: 0 0 30px 0;
-        padding-left: 20px;
-    }
-    .footer-column:last-child {
-        margin-bottom: 0;
+        margin-bottom: 20px;
     }
     
-    /* Skills */
-    .skills-carousel-section {
-        padding: 0 10px;
+    .footer-column ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
-    .carousel-window {
-        max-width: 100%;
+    .footer-column ul li {
+        margin: 0 10px;
     }
 }
