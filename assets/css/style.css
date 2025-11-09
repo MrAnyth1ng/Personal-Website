@@ -205,6 +205,17 @@ body {
     border-top: 1px solid #eee;
 }
 
+.role {
+    display: inline-block;
+    background-color: #b4f6ff;
+    color: #1da192;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
 .tech-tag {
     display: inline-block;
     background-color: #e0f7fa;
