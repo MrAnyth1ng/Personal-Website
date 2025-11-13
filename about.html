@@ -3,29 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - ASD DSA</title>
+    <title>About</title>
     <link rel="stylesheet" href="assets/css/style.css">
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    
+
     <script>
         $(function(){
-            // Load the header.html content into the 'header-placeholder' div
-            $("#header-placeholder").load("header.html");
-            // Load the footer.html content into the 'footer-placeholder' div
             $("#footer-placeholder").load("footer.html");
         });
     </script>
 </head>
 <body>
-
-    <div id="header-placeholder"></div>
+    <header class="site-header">
+        <div class="header-content">
+            
+            <div class="site-logo">
+                <a href="index.html">
+                    <h2>BERT GRAZA</h2>
+                </a>
+            </div>
+            
+            <nav class="main-nav">
+                <a href="index.html">HOME</a>
+                <a href="projects.html">PROJECTS</a>
+                <div class="nav-dropdown">
+                    <a href="learning.html">LEARNING</a>
+                    <div class="dropdown-content">
+                        <a href="learning-ignition.html">Ignition</a>
+                        <a href="learning-tia.html">TIA Portal</a>
+                        <a href="learning-simatic.html">Simatic Manager</a>
+                        <a href="learning-studio5000.html">Studio 5000</a>
+                        <a href="learning-rslogix500.html">RSLogix 500</a>
+                        <a href="learning-factorytalk.html">Factory Talk</a>
+                        <a href="learning-cxprogrammer.html">CX-Programmer</a>
+                        <a href="learning-weintek.html">Weintek EasyBuilder Pro</a>
+                        <a href="learning-mariadb.html">MariaDB</a>
+                    </div>
+                </div>
+                <a href="about.html" class="active">ABOUT</a>
+                <a href="resume.html">RESUME</a>
+            </nav>
+            
+        </div>
+    </header>
 
     <main class="page-content">
-        <h1>Test Content for the About Page</h1>
-        <p>This paragraph is unique to about.html and will be surrounded by the reusable header and footer.</p>
-    </main>
-    <div id="footer-placeholder"></div>
     
+    </main>
+
+    <div id="footer-placeholder"></div>
 </body>
 </html>
