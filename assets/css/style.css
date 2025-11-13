@@ -37,7 +37,8 @@ body {
     text-decoration: none;
 }
 
-.main-nav a {
+.main-nav a,
+.main-nav div {
     color: #1a3c5a;
     text-decoration: none;
     font-size: 0.95em;
@@ -549,7 +550,8 @@ main {
         order: 2;
     }
 
-    .main-nav a {
+    .main-nav a,
+    .main-nav div {
         margin: 5px 10px;
     }
     
